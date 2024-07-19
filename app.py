@@ -23,7 +23,7 @@ def preprocess_input_img(img):
 def generate_ai_prob_score(input_image):
     preprocessed_img = preprocess_input_img(input_image)
 
-    model = tf.keras.models.load_model('classifier_old.h5', custom_objects={'featureExtractionLayer': featureExtractionLayer})
+    model = tf.keras.models.load_model('patch_craft_classifier.h5', custom_objects={'featureExtractionLayer': featureExtractionLayer})
     ai_score = model.predict(preprocessed_img)
 
     return ai_score
