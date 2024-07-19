@@ -1,9 +1,9 @@
 import tensorflow as tf
-from tensorflow import keras
 import streamlit as st
 from PIL import Image
 from patch_generator import smash_n_reconstruct
 from filters import apply_all_filters
+from featureExtractionLayer import featureExtractionLayer
 
 
 # Preprocessing wrapper
@@ -23,7 +23,7 @@ def preprocess_input_img(img):
 def generate_ai_prob_score(input_image):
     preprocessed_img = preprocess_input_img(input_image)
 
-    model = keras.models.load_model('classifier.keras', safe_mode=False)
+    model = tf.keras.models.load_model('classifier_old.h5', custom_objects={'featureExtractionLayer': featureExtractionLayer})
     ai_score = model.predict(preprocessed_img)
 
     return ai_score
