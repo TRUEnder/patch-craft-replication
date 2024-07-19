@@ -23,7 +23,7 @@ def preprocess_input_img(img):
 def generate_ai_prob_score(input_image):
     preprocessed_img = preprocess_input_img(input_image)
 
-    model = tf.keras.models.load_model('classifier.h5')
+    model = keras.models.load_model('classifier.h5')
     ai_score = model.predict(preprocessed_img)
 
     return ai_score
