@@ -1,5 +1,6 @@
 numpy==1.24.3
 streamlit==1.36.0
 tensorflow==2.16.1
+keras==3.4.1
 Pillow==10.4.0
 opencv-python-headless==4.10.0.84
